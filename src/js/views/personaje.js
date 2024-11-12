@@ -1,19 +1,17 @@
-import React, { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Context } from '../store/appContext';
+import React, { useEffect }  from 'react';
+import { useActionData } from 'react-router';
 
-const CardPersonajes = () => {
-  const { store, actions } = useContext(Context);
 
-  useEffect(() => {
-    actions.loadPersonas(); 
-  }, []);
 
-  const agregarAFavoritos = (persona) => {
-    actions.agregarAFavoritos(persona); 
-  };
 
-  return (
+const Personaje = () => {
+  
+   useEffect(()=>{
+    
+    actions.loadPersonaID()
+
+   },[])
+   return (
     <div className="container mt-5">
       <div className="row">
         {store.personas.map((persona) => (
@@ -26,7 +24,7 @@ const CardPersonajes = () => {
                 <p>Color de cabello: {persona.hair_color}</p>
 
                 {/* Redirige a la página de detalles usando el ID extraído de la URL */}
-                <Link to={`/personaje`}>
+                <Link to={`/demo`}>
                   <button className="btn btn-primary">Más Información</button>
                 </Link>
 
@@ -45,4 +43,5 @@ const CardPersonajes = () => {
   );
 };
 
-export default CardPersonajes;
+export default Personaje;
+

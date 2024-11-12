@@ -1,45 +1,52 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
-		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+	  store: {
+		demo: [],
+		personas: [],
+		planetas: [],
+		vehiculos: [],
+	  },
+	  actions: {
+		// Example function that calls another action
+		exampleFunction: () => {
+		  getActions().changeColor(0, "green");
 		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
+  
+		// Cargar todas las personas
+		loadPersonas: () => {
+		  fetch('https://www.swapi.tech/api/people/')
+			.then((response) => response.json())
+			.then((data) => setStore({ personas: data.results }))
+			.catch((err) => console.error(err));
+		},
+  
+		// Cargar todos los planetas
+		loadPlanetas: () => {
+		  fetch('https://www.swapi.tech/api/planets/')
+			.then((response) => response.json())
+			.then((data) => setStore({ planetas: data.results }))
+			.catch((err) => console.error(err));
+		},
+  
+		// Cargar todos los vehículos
+		loadVehiculos: () => {
+		  fetch('https://www.swapi.tech/api/vehicles/')
+			.then((response) => response.json())
+			.then((data) => setStore({ vehiculos: data.results }))
+			.catch((err) => console.error(err));
+		},
+  
+		loadPersonaID: (uid) => {
+		  fetch(`https://www.swapi.tech/api/people/${uid}/`)  
+			.then((response) => response.json())
+			.then((data) => {
+			  setStore({ personas: [data.result] }); 
+			})
+			.catch((err) => console.error(err));
+		},
+	  },
 	};
-};
-
-export default getState;
+  };
+  
+  export default getState;
+  

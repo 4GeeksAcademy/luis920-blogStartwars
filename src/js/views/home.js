@@ -5,6 +5,8 @@ import CardPlanetas from "../component/Planetas";
 import CardVehiculos from "../component/Vehiculos";
 
 export const Home = () => (
+
+	
 	<div className="text-center mt-5">
 		<h1 className="text-light">Personajes</h1>
 		<CardPersonajes/>
