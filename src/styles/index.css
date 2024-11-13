@@ -183,4 +183,10 @@ body{
   transform: scale(0.95);
   transition-duration: 0.3s;
 }
+.añadir{
+  background-color: #109fe1;
+  width:60px ;
+  height: 30px;
+  border-radius: 50px;
 
+}

@@ -4,7 +4,7 @@ import CardPersonajes from "../component/Personajes";
 import CardPlanetas from "../component/Planetas";
 import CardVehiculos from "../component/Vehiculos";
 
-export const Home = () => (
+export const Home = () => 
 
 	
 	<div className="text-center mt-5">
@@ -15,4 +15,4 @@ export const Home = () => (
 		<h1 className="text-light">Vehiculos</h1>
 		<CardVehiculos/>
 	</div>
-);
+
