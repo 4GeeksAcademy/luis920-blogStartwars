@@ -6,28 +6,28 @@ const CardPlanetas = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.loadPersonas(); 
+    actions.loadPlanetas(); 
   }, []);
-  console.log(store.personas)
+  console.log(store.planetas)
   
   return (
     <div className="container mt-5">
       <div className="row">
-        {store.personas.map((persona) => (
-          <div key={persona.uid} className="col-md-4 mb-4">
+        {store.planetas.map((planeta) => (
+          <div key={planeta.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <h3>{persona.name}</h3>
-                <p>Género: {persona.gender}</p>
-                <p>Color de ojos: {persona.eye_color}</p>
-                <p>Color de cabello: {persona.hair_color}</p>
+                <h3>{planeta.name}</h3>
+                <p>Climate: {planeta.climate}</p>
+                <p>Diameter: {planeta.diameter}</p>
+                <p>Gravity: {planeta.gravity}</p>
 
-                <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">Más Información</button>
+                <Link to={`/vistaPlanetas/${planeta.url.split("/")[5]}`}>
+                  <button className="btn btn-primary">More info</button>
                 </Link>
 
                 <button
-                  onClick={() => actions.agregarAFavoritos(persona)} 
+                  onClick={() => actions.agregarAFavoritos(planeta)} 
                   className="añadir btn-secondary mt-2"
                 >
                   ♡

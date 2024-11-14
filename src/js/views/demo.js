@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Context } from "../store/appContext";  // Asegúrate de que este contexto esté bien configurado
+import { Context } from "../store/appContext";  
 import "../../styles/demo.css";
 import { useParams } from "react-router";
 

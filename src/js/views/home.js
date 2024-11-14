@@ -8,11 +8,11 @@ export const Home = () =>
 
 	
 	<div className="text-center mt-5">
-		<h1 className="text-light">Personajes</h1>
+		<h1 className="text-light">Characters</h1>
 		<CardPersonajes/>
-		<h1 className="text-light">Planetas</h1>
+		<h1 className="text-light">Planets</h1>
 		<CardPlanetas/>
-		<h1 className="text-light">Vehiculos</h1>
+		<h1 className="text-light">Vehicles</h1>
 		<CardVehiculos/>
 	</div>
 

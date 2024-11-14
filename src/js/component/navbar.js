@@ -28,7 +28,7 @@ export const Navbar = () => {
             aria-haspopup="true"
             aria-expanded={isOpen ? "true" : "false"} 
           >
-            Favoritos
+            Favorites
           </button>
           <div className={`dropdown-menu ${isOpen ? "show" : ""}`}>
             {store.favoritos && store.favoritos.length > 0 ? (

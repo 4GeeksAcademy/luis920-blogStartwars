@@ -18,12 +18,12 @@ const CardPersonajes = () => {
             <div className="card">
               <div className="card-body">
                 <h3>{persona.name}</h3>
-                <p>Género: {persona.gender}</p>
-                <p>Color de ojos: {persona.eye_color}</p>
-                <p>Color de cabello: {persona.hair_color}</p>
+                <p>Gender: {persona.gender}</p>
+                <p>Eye color: {persona.eye_color}</p>
+                <p>Hair color: {persona.hair_color}</p>
 
                 <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">Más Información</button>
+                  <button className="btn btn-primary">More info</button>
                 </Link>
 
                 <button

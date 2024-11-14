@@ -6,28 +6,28 @@ const CardVehiculos = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.loadPersonas(); 
+    actions.loadVehiculos(); 
   }, []);
-  console.log(store.personas)
+  console.log(store.vehiculos)
   
   return (
     <div className="container mt-5">
       <div className="row">
-        {store.personas.map((persona) => (
-          <div key={persona.uid} className="col-md-4 mb-4">
+        {store.vehiculos.map((vehiculo) => (
+          <div key={vehiculo.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <h3>{persona.name}</h3>
-                <p>Género: {persona.gender}</p>
-                <p>Color de ojos: {persona.eye_color}</p>
-                <p>Color de cabello: {persona.hair_color}</p>
+                <h3>{vehiculo.name}</h3>
+                <p>Model: {vehiculo.model}</p>
+                <p>Passengers: {vehiculo.passengers}</p>
+                <p>Consumables: {vehiculo.consumables}</p>
 
-                <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">Más Información</button>
+                <Link to={`/demo/${vehiculo.url.split("/")[5]}`}>
+                  <button className="btn btn-primary">More info</button>
                 </Link>
 
                 <button
-                  onClick={() => actions.agregarAFavoritos(persona)} 
+                  onClick={() => actions.agregarAFavoritos(vehiculo)} 
                   className="añadir btn-secondary mt-2"
                 >
                   ♡
