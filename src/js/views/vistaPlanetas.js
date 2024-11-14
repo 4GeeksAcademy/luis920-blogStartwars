@@ -17,8 +17,8 @@ export const VistaPlanetas = () => {
       {store.planeta ? (
         <div className="planeta-card">
           <h2>{store.planeta.name}</h2>
-          <p>Rotation period: {store.planeta.rotation_period} cm</p>
-          <p>Orbital period: {store.planeta.orbital_period} kg</p>
+          <p>Rotation period: {store.planeta.rotation_period} </p>
+          <p>Orbital period: {store.planeta.orbital_period} </p>
           <p>Diameter: {store.planeta.diameter}</p>
           <p>Climate: {store.planeta.climate}</p>
           <p>Gravity: {store.planeta.gravity}</p>

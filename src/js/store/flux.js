@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		vehiculos: [],
 		personaje: {},
 		planeta:{},
+		vehiculo:{}
 	  },
 	  actions: {
   
@@ -63,6 +64,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			}
 			const data = await response.json();
 			setStore({ planeta: data.result.properties });  
+		  } catch (error) {
+			console.error('Error al obtener el personaje:', error);
+		  }
+		},
+		loadVehiculoID: async (uid) => {
+			console.log(uid)
+		  try {
+			const response = await fetch(`https://www.swapi.tech/api/vehicles/${uid}`);      
+			if (!response.ok) {
+			  throw new Error('No se pudo obtener la información del personaje');
+			}
+			const data = await response.json();
+			setStore({ vehiculo: data.result.properties });  
 		  } catch (error) {
 			console.error('Error al obtener el personaje:', error);
 		  }

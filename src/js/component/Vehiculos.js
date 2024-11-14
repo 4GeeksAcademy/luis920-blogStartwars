@@ -22,7 +22,7 @@ const CardVehiculos = () => {
                 <p>Passengers: {vehiculo.passengers}</p>
                 <p>Consumables: {vehiculo.consumables}</p>
 
-                <Link to={`/demo/${vehiculo.url.split("/")[5]}`}>
+                <Link to={`/vistaVehiculos/${vehiculo.url.split("/")[5]}`}>
                   <button className="btn btn-primary">More info</button>
                 </Link>
 
