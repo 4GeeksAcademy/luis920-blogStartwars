@@ -1,28 +1,27 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";  // Asegúrate de que este contexto esté bien configurado
 import "../../styles/demo.css";
-
+import { useParams } from "react-router";
 
 export const Demo = () => {
   const { store, actions } = useContext(Context)
-
+  const params = useParams()
   
   useEffect(() => {
-    actions.loadPersonaID(1); 
-  }, [actions]);
+    actions.loadPersonaID(params.id); 
+  }, []);
   
-  const personaje = store.personaje && store.personaje[0];
-
   return (
     <div className="demo-container">
-      {personaje ? (
+      <img src={`https://starwars-visualguide.com/assets/img/characters/${params.id}.jpg`} className="img-fluid rounded-start" alt="..." />
+      {store.personaje ? (
         <div className="personaje-card">
-          <h2>{personaje.name}</h2>
-          <p>Altura: {personaje.height} cm</p>
-          <p>Peso: {personaje.mass} kg</p>
-          <p>Color de ojos: {personaje.eye_color}</p>
-          <p>Color de cabello: {personaje.hair_color}</p>
-          <p>Género: {personaje.gender}</p>
+          <h2>{store.personaje.name}</h2>
+          <p>Altura: {store.personaje.height} cm</p>
+          <p>Peso: {store.personaje.mass} kg</p>
+          <p>Color de ojos: {store.personaje.eye_color}</p>
+          <p>Color de cabello: {store.personaje.hair_color}</p>
+          <p>Género: {store.personaje.gender}</p>
         </div>
       ) : (
         <p>Cargando personaje...</p>

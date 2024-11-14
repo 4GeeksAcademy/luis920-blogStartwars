@@ -6,33 +6,31 @@ const CardPlanetas = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.loadPlanetas(); // Llamamos a la función para cargar los personajes
+    actions.loadPersonas(); 
   }, []);
-
-  // Función para agregar un personaje a favoritos
-  const agregarAFavoritos = (planeta) => {
-    actions.agregarAFavoritos(planeta); // Llamamos a la acción para agregar a favoritos en el store
-  };
-
+  console.log(store.personas)
+  
   return (
     <div className="container mt-5">
       <div className="row">
-        {store.planetas.map((planeta) => (
-          <div key={planeta.uid} className="col-md-4 mb-4">
+        {store.personas.map((persona) => (
+          <div key={persona.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <h3>{planeta.name}</h3>
-                <p>Genero: {planeta.gender}</p>
-                <p>Color de ojos: {planeta.eye_color}</p>
-                <p>Color de cabello: {planeta.hair_color}</p>
-                <Link to={`/personaje/${planeta.uid}`}>
+                <h3>{persona.name}</h3>
+                <p>Género: {persona.gender}</p>
+                <p>Color de ojos: {persona.eye_color}</p>
+                <p>Color de cabello: {persona.hair_color}</p>
+
+                <Link to={`/demo/${persona.url.split("/")[5]}`}>
                   <button className="btn btn-primary">Más Información</button>
                 </Link>
+
                 <button
-                  onClick={() => agregarAFavoritos(planeta)} 
-                  className="btn btn-secondary mt-2"
+                  onClick={() => actions.agregarAFavoritos(persona)} 
+                  className="añadir btn-secondary mt-2"
                 >
-                  Añadir a Favoritos
+                  ♡
                 </button>
               </div>
             </div>
@@ -40,7 +38,9 @@ const CardPlanetas = () => {
         ))}
       </div>
     </div>
+
   );
 };
+   
 
 export default CardPlanetas;

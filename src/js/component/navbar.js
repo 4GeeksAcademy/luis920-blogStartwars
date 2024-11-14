@@ -24,11 +24,11 @@ export const Navbar = () => {
           <button
             type="button"
             className="btn-favorites btn-primary dropdown-toggle"
-            onClick={toggleDropdown} // Llamamos a la función para alternar el menú
+            onClick={toggleDropdown} 
             aria-haspopup="true"
-            aria-expanded={isOpen ? "true" : "false"} // Cambiamos el estado aria-expanded dinámicamente
+            aria-expanded={isOpen ? "true" : "false"} 
           >
-            Favorites
+            Favoritos
           </button>
           <div className={`dropdown-menu ${isOpen ? "show" : ""}`}>
             {store.favoritos && store.favoritos.length > 0 ? (

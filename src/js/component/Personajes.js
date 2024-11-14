@@ -7,15 +7,13 @@ const CardPersonajes = () => {
 
   useEffect(() => {
     actions.loadPersonas(); 
-  }, [actions]);
-  
-  const personas = store.personas || [];
-
+  }, []);
+  console.log(store.personas)
   
   return (
     <div className="container mt-5">
       <div className="row">
-        {personas.map((persona) => (
+        {store.personas.map((persona) => (
           <div key={persona.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
@@ -24,7 +22,7 @@ const CardPersonajes = () => {
                 <p>Color de ojos: {persona.eye_color}</p>
                 <p>Color de cabello: {persona.hair_color}</p>
 
-                <Link to={`/demo`}>
+                <Link to={`/demo/${persona.url.split("/")[5]}`}>
                   <button className="btn btn-primary">Más Información</button>
                 </Link>
 
@@ -40,6 +38,7 @@ const CardPersonajes = () => {
         ))}
       </div>
     </div>
+
   );
 };
 

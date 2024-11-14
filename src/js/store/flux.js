@@ -5,13 +5,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 		personas: [],
 		planetas: [],
 		vehiculos: [],
-		personaje: [],
+		personaje: {},
 	  },
 	  actions: {
   
 		// Cargar todas las personas
 		loadPersonas: () => {
-		  fetch('https://www.swapi.tech/api/people/')
+		  fetch('https://swapi.dev/api/people')
 			.then((response) => response.json())
 			.then((data) => {
 			  setStore({ personas: data.results });
@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
 		// Cargar todos los planetas
 		loadPlanetas: () => {
-		  fetch('https://www.swapi.tech/api/planets/')
+		  fetch(`https://www.swapi.dev/api/planets/`)
 			.then((response) => response.json())
 			.then((data) => {
 			  setStore({ planetas: data.results });
@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
 		// Cargar todos los vehículos
 		loadVehiculos: () => {
-		  fetch('https://www.swapi.tech/api/vehicles/')
+		  fetch('https://www.swapi.dev/api/vehicles/')
 			.then((response) => response.json())
 			.then((data) => {
 			  setStore({ vehiculos: data.results });
@@ -41,13 +41,14 @@ const getState = ({ getStore, getActions, setStore }) => {
   
 		// Cargar un personaje por ID
 		loadPersonaID: async (uid) => {
+			console.log(uid)
 		  try {
 			const response = await fetch(`https://www.swapi.tech/api/people/${uid}`);      
 			if (!response.ok) {
 			  throw new Error('No se pudo obtener la información del personaje');
 			}
 			const data = await response.json();
-			setStore({ personaje: [data.result.properties] });  
+			setStore({ personaje: data.result.properties });  
 		  } catch (error) {
 			console.error('Error al obtener el personaje:', error);
 		  }
