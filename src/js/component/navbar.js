@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext"; // Asegúrate de importar el Context
+import { Context } from "../store/appContext"; 
 
 export const Navbar = () => {
-  const { store } = useContext(Context); // Accedemos al store para obtener los favoritos
-  const [isOpen, setIsOpen] = useState(false); // Estado para manejar si el desplegable está abierto o cerrado
+  const { store } = useContext(Context); 
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Alternamos el estado del desplegable
+    setIsOpen(!isOpen); 
   };
 
   return (

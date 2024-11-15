@@ -17,7 +17,7 @@ const CardPersonajes = () => {
           <div key={persona.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <div className='container-info'>
+                <div className='container'>
                   <h3>{persona.name}</h3>
                 <p>Gender: {persona.gender}</p>
                 <p>Eye color: {persona.eye_color}</p>

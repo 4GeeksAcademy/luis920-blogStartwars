@@ -213,8 +213,8 @@ body{
 }
 .d-flex {
   display: flex;
-  gap: 10px; /* Añade un pequeño espacio entre los botones */
-  align-items: center; /* Alinea los botones verticalmente */
+  gap: 10px; 
+  align-items: center; 
 }
 
 .btn {
@@ -227,7 +227,7 @@ body{
   background-color: #ddd;
 }
 
-/* Estilo general para la tarjeta */
+
 .vistas-card {
   background-color: #fff;
   border-radius: 10px;
@@ -240,13 +240,13 @@ body{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el ratón */
+
 .vistas-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el título */
+
 .titulo-vistas {
   font-size: 1.8rem;
   color: #4CAF50;
@@ -255,7 +255,7 @@ body{
   text-transform: capitalize;
 }
 
-/* Estilo para los párrafos */
+
 .vistas-card p {
   font-size: 1rem;
   margin: 10px 0;
@@ -263,38 +263,35 @@ body{
   color: #555;
 }
 
-/* Negrita para las etiquetas (propiedades) */
+
 .vistas-card p strong {
   font-weight: bold;
   color: #333;
 }
 
-/* Estilo general de los textos */
+
 .vistas-card p {
   font-size: 16px;
   margin-bottom: 10px;
   color: #555;
 }
 
-/* Fondo de la tarjeta */
+
 .vistas-card {
   background-color: #f9f9f9;
   border-radius: 10px;
   padding: 20px;
 }
 
-/* Sombra y borde */
+
 .vistas-card {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
-
-/* Enfoque de hover para la tarjeta */
 .vistas-card:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-/* Alineación centrada */
 .titulo-vistas {
   text-align: center;
   color: #2d2d2d;
@@ -312,5 +309,6 @@ body{
   margin-bottom: 0px;
  
 }
+
 
 
