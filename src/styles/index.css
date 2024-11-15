@@ -190,3 +190,40 @@ body{
   border-radius: 50px;
 
 }
+.demo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.vistas-card {
+ height: 400px;
+ width: 600px;
+ margin-right:150px; 
+  
+}
+
+.img-vistas {
+  width: 1000px;
+  height: auto;
+}
+.titulo-vistas{
+  color:white;
+}
+.d-flex {
+  display: flex;
+  gap: 10px; /* Añade un pequeño espacio entre los botones */
+  align-items: center; /* Alinea los botones verticalmente */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+

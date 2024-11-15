@@ -9,7 +9,7 @@ const CardPersonajes = () => {
     actions.loadPersonas(); 
   }, []);
   console.log(store.personas)
-  
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -22,23 +22,24 @@ const CardPersonajes = () => {
                 <p>Eye color: {persona.eye_color}</p>
                 <p>Hair color: {persona.hair_color}</p>
 
-                <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">More info</button>
-                </Link>
+                <div className="d-flex justify-content-between">
+                  <Link to={`/demo/${persona.url.split("/")[5]}`}>
+                    <button className="btn btn-primary">More info</button>
+                  </Link>
 
-                <button
-                  onClick={() => actions.agregarAFavoritos(persona)} 
-                  className="añadir btn-secondary mt-2"
-                >
-                  ♡
-                </button>
+                  <button
+                    onClick={() => actions.agregarAFavoritos(persona)} 
+                    className="añadir btn-secondary"
+                  >
+                    ♡
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-
   );
 };
 

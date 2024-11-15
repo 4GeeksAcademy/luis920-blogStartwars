@@ -9,23 +9,27 @@ export const VistaVehiculos = () => {
   
   useEffect(() => {
     actions.loadVehiculoID(params.id); 
-  }, []);
+  }, [params.id]);
   
   return (
-    <div className="demo-container">
+    <div className="demo-container" >
+      <img 
+        src={`https://starwars-visualguide.com/assets/img/vehicles/${params.id}.jpg`} 
+        className="img-vistas img-fluid rounded-start" 
+        alt="Imagen del vehículo" 
         
-      <img src={`https://starwars-visualguide.com/assets/img/vehicles/${params.id}.jpg`} className="img-fluid rounded-start" alt="..." />
+      />
       {store.vehiculo ? (
-        <div className="planeta-card">
-          <h2>{store.vehiculo.name}</h2>
-          <p>Consumables: {store.vehiculo.consumables} </p>
-          <p>Crew: {store.vehiculo.crew} </p>
-          <p>model: {store.vehiculo.model}</p>
+        <div className="vistas-card">
+          <h2 className="titulo-vistas">{store.vehiculo.name}</h2>
+          <p>Consumables: {store.vehiculo.consumables}</p>
+          <p>Crew: {store.vehiculo.crew}</p>
+          <p>Model: {store.vehiculo.model}</p>
           <p>Capacity: {store.vehiculo.cargo_capacity}</p>
           <p>Passengers: {store.vehiculo.passengers}</p>
         </div>
       ) : (
-        <p>Cargando personaje...</p>
+        <p>Cargando vehículo...</p>
       )}
     </div>
   );
