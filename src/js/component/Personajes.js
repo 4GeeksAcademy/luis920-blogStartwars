@@ -17,14 +17,17 @@ const CardPersonajes = () => {
           <div key={persona.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <h3>{persona.name}</h3>
+                <div className='container-info'>
+                  <h3>{persona.name}</h3>
                 <p>Gender: {persona.gender}</p>
                 <p>Eye color: {persona.eye_color}</p>
                 <p>Hair color: {persona.hair_color}</p>
+                </div>
+                
 
                 <div className="d-flex justify-content-between">
                   <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                    <button className="btn btn-primary">More info</button>
+                    <button className=" info btn btn-primary">More info</button>
                   </Link>
 
                   <button

@@ -197,16 +197,16 @@ body{
   gap: 20px;
 }
 
-.vistas-card {
- height: 400px;
- width: 600px;
- margin-right:150px; 
-  
-}
+
 
 .img-vistas {
-  width: 1000px;
-  height: auto;
+  width: 500px;
+  height: 500px;
+  border: white 5px solid;
+  border-radius: 50px;
+  margin-left: 20px;
+ 
+  
 }
 .titulo-vistas{
   color:white;
@@ -226,4 +226,91 @@ body{
 .btn:hover {
   background-color: #ddd;
 }
+
+/* Estilo general para la tarjeta */
+.vistas-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.vistas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título */
+.titulo-vistas {
+  font-size: 1.8rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* Estilo para los párrafos */
+.vistas-card p {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Negrita para las etiquetas (propiedades) */
+.vistas-card p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo general de los textos */
+.vistas-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Fondo de la tarjeta */
+.vistas-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Sombra y borde */
+.vistas-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Enfoque de hover para la tarjeta */
+.vistas-card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Alineación centrada */
+.titulo-vistas {
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+.añadir{
+  margin-top:80px ;
+}
+.info{
+  margin-top: 80px;
+ 
+}
+.container-info{
+  
+  margin-bottom: 0px;
+ 
+}
+
 

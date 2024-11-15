@@ -22,16 +22,18 @@ const CardVehiculos = () => {
                 <p>Passengers: {vehiculo.passengers}</p>
                 <p>Consumables: {vehiculo.consumables}</p>
 
-                <Link to={`/vistaVehiculos/${vehiculo.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">More info</button>
-                </Link>
+                <div className="d-flex justify-content-between">
+                  <Link to={`/vistaVehiculos/${vehiculo.url.split("/")[5]}`}>
+                    <button className=" info btn btn-primary">More info</button>
+                  </Link>
 
-                <button
-                  onClick={() => actions.agregarAFavoritos(vehiculo)} 
-                  className="añadir btn-secondary mt-2"
-                >
-                  ♡
-                </button>
+                  <button
+                    onClick={() => actions.agregarAFavoritos(vehiculo)} 
+                    className="añadir btn-secondary"
+                  >
+                    ♡
+                  </button>
+                </div>
               </div>
             </div>
           </div>

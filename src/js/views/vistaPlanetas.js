@@ -12,19 +12,26 @@ export const VistaPlanetas = () => {
   }, []);
   
   return (
-    <div className="demo-container">
-      <img src={`https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg`} className="img-fluid rounded-start" alt="..." />
+    <div className="demo-container" >
+      <img 
+        src={`https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg`} 
+        className="img-vistas img-fluid " 
+        alt="Imagen del planeta" 
+        
+      />
       {store.planeta ? (
-        <div className="planeta-card">
-          <h2>{store.planeta.name}</h2>
-          <p>Rotation period: {store.planeta.rotation_period} </p>
-          <p>Orbital period: {store.planeta.orbital_period} </p>
-          <p>Diameter: {store.planeta.diameter}</p>
-          <p>Climate: {store.planeta.climate}</p>
-          <p>Gravity: {store.planeta.gravity}</p>
-        </div>
+       <div className="vistas-card">
+       <h2 className="titulo-vistas">{store.planeta.name}</h2>
+       <p><strong>Rotation period:</strong> {store.planeta.rotation_period}</p>
+       <p><strong>Orbital period:</strong> {store.planeta.orbital_period}</p>
+       <p><strong>Diameter:</strong> {store.planeta.diameter}</p>
+       <p><strong>Climate:</strong> {store.planeta.climate}</p>
+       <p><strong>Gravity:</strong> {store.planeta.gravity}</p>
+       <p><strong>Population:</strong> {store.planeta.population}</p>
+       <p><strong>Terrain:</strong> {store.planeta.terrain}</p>
+     </div>
       ) : (
-        <p>Cargando personaje...</p>
+        <p>Cargando planeta...</p>
       )}
     </div>
   );

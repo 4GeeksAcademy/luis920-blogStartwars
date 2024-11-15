@@ -21,17 +21,19 @@ const CardPlanetas = () => {
                 <p>Climate: {planeta.climate}</p>
                 <p>Diameter: {planeta.diameter}</p>
                 <p>Gravity: {planeta.gravity}</p>
+                
+                <div className="d-flex justify-content-between">
+                  <Link to={`/vistaPlanetas/${planeta.url.split("/")[5]}`}>
+                    <button className=" info btn btn-primary">More info</button>
+                  </Link>
 
-                <Link to={`/vistaPlanetas/${planeta.url.split("/")[5]}`}>
-                  <button className="btn btn-primary">More info</button>
-                </Link>
-
-                <button
-                  onClick={() => actions.agregarAFavoritos(planeta)} 
-                  className="añadir btn-secondary mt-2"
-                >
-                  ♡
-                </button>
+                  <button
+                    onClick={() => actions.agregarAFavoritos(planeta)} 
+                    className="añadir btn-secondary"
+                  >
+                    ♡
+                  </button>
+                </div>
               </div>
             </div>
           </div>
