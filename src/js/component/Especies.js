@@ -34,7 +34,7 @@ const CardEspecies = () => {
                   </Link>
                   <button
                   type="button"
-                  className=" añadir btn-secondary " 
+                  className=" añadir  " 
                   onClick={() => actions.addFavoritos(especie)}
                   >
                     ♡
