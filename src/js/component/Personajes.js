@@ -29,13 +29,7 @@ const CardPersonajes = () => {
                   <Link to={`/demo/${persona.url.split("/")[5]}`}>
                     <button className=" info btn btn-primary">More info</button>
                   </Link>
-
-                  <button
-                    onClick={() => actions.agregarAFavoritos(persona)} 
-                    className="añadir btn-secondary"
-                  >
-                    ♡
-                  </button>
+                  <button className="añadir btn-secondary"> ♡</button>
                 </div>
               </div>
             </div>

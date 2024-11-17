@@ -22,13 +22,21 @@ export const VistaVehiculos = () => {
       {store.vehiculo ? (
         <div className="vistas-card">
           <h2 className="titulo-vistas">{store.vehiculo.name}</h2>
-          <p>Consumables: {store.vehiculo.consumables}</p>
-          <p>Crew: {store.vehiculo.crew}</p>
-          <p>Model: {store.vehiculo.model}</p>
-          <p>Capacity: {store.vehiculo.cargo_capacity}</p>
-          <p>Passengers: {store.vehiculo.passengers}</p>
-          <p>Cost in credits: {store.vehiculo.cost_in_credits}</p>
-          <p>Manufacturer: {store.vehiculo.manufacturer}</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.</p>
+          <p><strong>Consumables:</strong> {store.vehiculo.consumables}</p>
+          <p><strong>Crew:</strong> {store.vehiculo.crew}</p>
+          <p><strong>Model:</strong> {store.vehiculo.model}</p>
+          <p><strong>Capacity:</strong> {store.vehiculo.cargo_capacity}</p>
+          <p><strong>Passengers:</strong> {store.vehiculo.passengers}</p>
+          <p><strong>Cost in credits:</strong> {store.vehiculo.cost_in_credits}</p>
+          <p><strong>Manufacturer:</strong> {store.vehiculo.manufacturer}</p>
           
           
         </div>

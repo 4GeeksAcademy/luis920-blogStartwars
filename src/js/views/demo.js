@@ -22,6 +22,14 @@ export const Demo = () => {
       {store.personaje ? (
         <div className="vistas-card">
         <h2 className="titulo-vistas">{store.personaje.name}</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.</p>
         <p><strong>Height:</strong> {store.personaje.height}cm</p>
         <p><strong>Mass:</strong> {store.personaje.mass}kg</p>
         <p><strong>Eyes color:</strong> {store.personaje.eye_color}</p>

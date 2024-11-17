@@ -21,7 +21,15 @@ export const VistaPlanetas = () => {
       />
       {store.planeta ? (
        <div className="vistas-card">
-       <h2 className="titulo-vistas">{store.planeta.name}</h2>
+        <h1 className="titulo-vistas">  {store.planeta.name}</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Quam, consequuntur magnam et, rem necessitatibus, 
+           vitae provident veniam voluptatem quis repellendus animi dolorum? 
+           Saepe earum iusto animi non repudiandae! Eos, esse.</p>
        <p><strong>Rotation period:</strong> {store.planeta.rotation_period}</p>
        <p><strong>Orbital period:</strong> {store.planeta.orbital_period}</p>
        <p><strong>Diameter:</strong> {store.planeta.diameter}</p>

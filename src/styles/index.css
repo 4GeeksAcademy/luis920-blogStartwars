@@ -76,113 +76,8 @@ body{
     color: beige;
   }
 
-.btn {
-  --clr-font-main: hsla(0 0% 20% / 100);
-  --btn-bg-1: hsla(194 100% 69% / 1);
-  --btn-bg-2: hsla(217 100% 56% / 1);
-  --btn-bg-color: hsla(360 100% 100% / 1);
-  --radii: 0.5em;
-  cursor: pointer;
-  padding: 0.9em 1.4em;
-  min-width: 120px;
-  min-height: 44px;
-  font-size: var(--size, 1rem);
-  font-weight: 500;
-  transition: 0.8s;
-  background-size: 280% auto;
-  margin-top: 50px;
-  background-image: linear-gradient(
-    325deg,
-    var(--btn-bg-2) 0%,
-    var(--btn-bg-1) 55%,
-    var(--btn-bg-2) 90%
-  );
-  border: none;
-  border-radius: var(--radii);
-  color: var(--btn-bg-color);
-  box-shadow:
-    0px 0px 20px rgba(71, 184, 255, 0.5),
-    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
-    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
-    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
-}
 
-.btn:hover {
-  background-position: right top;
-}
 
-.btn:is(:focus, :focus-visible, :active) {
-  outline: none;
-  box-shadow:
-    0 0 0 3px var(--btn-bg-color),
-    0 0 0 6px var(--btn-bg-2);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn {
-    transition: linear;
-  }
-}
-/* From Uiverse.io by vinodjangid07 */ 
-.bookmarkBtn {
-  width: 100px;
-  height: 40px;
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.349);
-  background-color: rgb(12, 12, 12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  overflow: hidden;
-}
-
-.IconContainer {
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-  transition-duration: 0.3s;
-}
-
-.icon {
-  border-radius: 1px;
-}
-
-.text {
-  height: 100%;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  z-index: 1;
-  transition-duration: 0.3s;
-  font-size: 1.04em;
-}
-
-.bookmarkBtn:hover .IconContainer {
-  width: 90px;
-  transition-duration: 0.3s;
-}
-
-.bookmarkBtn:hover .text {
-  transform: translate(10px);
-  width: 0;
-  font-size: 0;
-  transition-duration: 0.3s;
-}
-
-.bookmarkBtn:active {
-  transform: scale(0.95);
-  transition-duration: 0.3s;
-}
 .añadir{
   background-color: #109fe1;
   width:60px ;
@@ -223,18 +118,16 @@ body{
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #ddd;
-}
+
 
 
 .vistas-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 20px auto;
-  max-width: 400px;
+  width: 800px;
   font-family: 'Arial', sans-serif;
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -249,24 +142,17 @@ body{
 
 .titulo-vistas {
   font-size: 1.8rem;
-  color: #4CAF50;
+  color: #ffffff;
   margin-bottom: 15px;
   text-align: center;
   text-transform: capitalize;
 }
 
 
-.vistas-card p {
-  font-size: 1rem;
-  margin: 10px 0;
-  line-height: 1.6;
-  color: #555;
-}
-
 
 .vistas-card p strong {
   font-weight: bold;
-  color: #333;
+  color: #da0a0a;
 }
 
 
@@ -274,20 +160,12 @@ body{
   font-size: 16px;
   margin-bottom: 10px;
   color: #555;
-}
-
-
-.vistas-card {
   background-color: #f9f9f9;
   border-radius: 10px;
   padding: 20px;
 }
 
 
-.vistas-card {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
-}
 .vistas-card:hover {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
