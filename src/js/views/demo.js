@@ -36,7 +36,6 @@ export const Demo = () => {
         <p><strong>Hair color:</strong> {store.personaje.hair_color}</p>
         <p><strong>Skin color:</strong> {store.personaje.skin_color}</p>
         <p><strong>Birth year:</strong> {store.personaje.birth_year}</p>
-        <p><strong>Gender:</strong> {store.planeta.gender}</p>
       </div>
       ) : (
         <p>Cargando personaje...</p>
