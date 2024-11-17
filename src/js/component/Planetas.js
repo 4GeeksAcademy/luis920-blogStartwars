@@ -26,10 +26,10 @@ const CardPlanetas = () => {
                   <Link to={`/vistaPlanetas/${planeta.url.split("/")[5]}`}>
                     <button className=" info btn btn-primary">More info</button>
                   </Link>
-
                   <button
-                    onClick={() => actions.agregarAFavoritos(planeta)} 
-                    className="añadir btn-secondary"
+                  type="button"
+                  className=" añadir btn-secondary " 
+                  onClick={() => actions.addFavoritos(planeta)}
                   >
                     ♡
                   </button>

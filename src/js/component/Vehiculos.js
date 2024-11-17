@@ -26,10 +26,10 @@ const CardVehiculos = () => {
                   <Link to={`/vistaVehiculos/${vehiculo.url.split("/")[5]}`}>
                     <button className=" info btn btn-primary">More info</button>
                   </Link>
-
                   <button
-                    onClick={() => actions.agregarAFavoritos(vehiculo)} 
-                    className="añadir btn-secondary"
+                  type="button"
+                  className=" añadir btn-secondary " 
+                  onClick={() => actions.addFavoritos(vehiculo)}
                   >
                     ♡
                   </button>
