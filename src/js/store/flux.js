@@ -4,15 +4,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		demo: [],
 		personas: [],
 		planetas: [],
-		vehiculos: [],
+		especies:[],
 		favoritos:[],
 		personaje: {},
 		planeta:{},
-		vehiculo:{}
+		especie:{}
 	  },
 	  actions: {
   
-		// Cargar todas las personas
 		loadPersonas: () => {
 		  fetch('https://swapi.dev/api/people')
 			.then((response) => response.json())
@@ -22,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			.catch((err) => console.error('Error al cargar personas:', err));
 		},
   
-		// Cargar todos los planetas
+	
 		loadPlanetas: () => {
 		  fetch('https://swapi.dev/api/planets')
 			.then((response) => response.json())
@@ -31,18 +30,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			})
 			.catch((err) => console.error('Error al cargar planetas:', err));
 		},
+		loadEspecies: () => {
+			fetch('https://swapi.dev/api/species')
+			  .then((response) => response.json())
+			  .then((data) => {
+				setStore({ especies: data.results });
+			  })
+			  .catch((err) => console.error('Error al cargar planetas:', err));
+		  },
+		
   
-		// Cargar todos los vehículos
-		loadVehiculos: () => {
-		  fetch('https://swapi.dev/api/vehicles')
-			.then((response) => response.json())
-			.then((data) => {
-			  setStore({ vehiculos: data.results });
-			})
-			.catch((err) => console.error('Error al cargar vehículos:', err));
-		},
-  
-		// Cargar un personaje por ID
+		
 		loadPersonaID: async (uid) => {
 			console.log(uid)
 		  try {
@@ -69,15 +67,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			console.error('Error al obtener el personaje:', error);
 		  }
 		},
-		loadVehiculoID: async (uid) => {
+		loadEspecieID: async (uid) => {
 			console.log(uid)
 		  try {
-			const response = await fetch(`https://www.swapi.tech/api/vehicles/${uid}`);      
+			const response = await fetch(`https://www.swapi.tech/api/species/${uid}`);      
 			if (!response.ok) {
 			  throw new Error('No se pudo obtener la información del personaje');
 			}
 			const data = await response.json();
-			setStore({ vehiculo: data.result.properties });  
+			setStore({ especie: data.result.properties });  
 		  } catch (error) {
 			console.error('Error al obtener el personaje:', error);
 		  }

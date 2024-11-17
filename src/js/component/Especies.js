@@ -2,40 +2,40 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
-const CardPlanetas = () => {
+const CardEspecies = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.loadPlanetas(); 
+    actions.loadEspecies();
   }, []);
-  console.log(store.planetas)
-  
+
   return (
     <div className="container mt-5">
       <div className="row">
-        {store.planetas.map((planeta,index) => (
-          <div key={planeta.uid} className="col-md-4 mb-4">
+        {store.especies.map((especie,index) => (
+          <div key={especie.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
               <img
-                    src={`https://starwars-visualguide.com/assets/img/planets/${index +1 }.jpg`}
+                    src={`https://starwars-visualguide.com/assets/img/species/${index +1 }.jpg`}
                     className="img-home"
-                    alt={planeta.name}
+                    alt={especie.name}
                     onError={(e) => (e.target.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qWAIpqePEAH-UPypnABjdT_eNu7hlLi54Q&s')}
                   />
-                <h3>{planeta.name}</h3>
-                <p>Climate: {planeta.climate}</p>
-                <p>Diameter: {planeta.diameter}</p>
-                <p>Gravity: {planeta.gravity}</p>
-                
+                <div className="container">
+                  <h3>{especie.name}</h3>
+                  <p>Average height: {especie.average_height} cm</p>
+                  <p>Classification: {especie.classification}</p>
+                  <p>Designation: {especie.designation}</p>
+                </div>
                 <div className="d-flex justify-content-between">
-                  <Link to={`/vistaPlanetas/${planeta.url.split("/")[5]}`}>
-                    <button className=" info btn btn-primary">More info</button>
+                  <Link to={`/vistaEspecies/${especie.url.split("/")[5]}`}>
+                    <button className="info btn btn-primary">More info</button>
                   </Link>
                   <button
                   type="button"
                   className=" añadir btn-secondary " 
-                  onClick={() => actions.addFavoritos(planeta)}
+                  onClick={() => actions.addFavoritos(especie)}
                   >
                     ♡
                   </button>
@@ -46,9 +46,7 @@ const CardPlanetas = () => {
         ))}
       </div>
     </div>
-
   );
 };
-   
 
-export default CardPlanetas;
+export default CardEspecies;

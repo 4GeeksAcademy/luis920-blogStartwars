@@ -17,7 +17,7 @@ export const Navbar = () => {
       <div className="ml-auto">
         <div className="dropdown">
           <button
-            className="btn bg-warning dropdown-toggle"
+            className="btn bg-primary  text-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton"
             data-bs-toggle="dropdown"
@@ -31,7 +31,7 @@ export const Navbar = () => {
                 <li key={index} className="dropdown-item d-flex justify-content-between align-items-center">
                   <span>{favorito.name}</span>
                   <button
-                    className="btn btn-sm btn-danger ms-2"
+                    className="btn btn-sm  ms-2"
                     onClick={() => actions.removeFavoritos(favorito.name)}
                   >
                     <i className="fas fa-trash"></i>
