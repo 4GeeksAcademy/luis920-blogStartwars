@@ -8,7 +8,10 @@ const CardPersonajes = () => {
   useEffect(() => {
     actions.loadPersonas(); 
   }, []);
-  console.log(store.personas)
+
+  const handleAddFavorite = (persona) => {
+    actions.addFavorite(persona); // Esto ya agrega el personaje a favoritos en el store
+  };
 
   return (
     <div className="container mt-5">
@@ -17,19 +20,23 @@ const CardPersonajes = () => {
           <div key={persona.uid} className="col-md-4 mb-4">
             <div className="card">
               <div className="card-body">
-                <div className='container'>
+                <div className="container">
                   <h3>{persona.name}</h3>
-                <p>Gender: {persona.gender}</p>
-                <p>Eye color: {persona.eye_color}</p>
-                <p>Hair color: {persona.hair_color}</p>
+                  <p>Gender: {persona.gender}</p>
+                  <p>Eye color: {persona.eye_color}</p>
+                  <p>Hair color: {persona.hair_color}</p>
                 </div>
-                
-
                 <div className="d-flex justify-content-between">
                   <Link to={`/demo/${persona.url.split("/")[5]}`}>
-                    <button className=" info btn btn-primary">More info</button>
+                    <button className="info btn btn-primary">More info</button>
                   </Link>
-                  <button className="añadir btn-secondary"> ♡</button>
+                  <button
+                  type="button"
+                  className=" añadir btn-secondary " 
+                  onClick={() => actions.addFavoritos(persona)}
+                  >
+                    ♡
+                  </button>
                 </div>
               </div>
             </div>

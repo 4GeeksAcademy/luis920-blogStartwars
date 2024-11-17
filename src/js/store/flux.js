@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		personas: [],
 		planetas: [],
 		vehiculos: [],
+		favoritos:[],
 		personaje: {},
 		planeta:{},
 		vehiculo:{}
@@ -80,6 +81,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  } catch (error) {
 			console.error('Error al obtener el personaje:', error);
 		  }
+		},
+		addFavoritos: (item) => {
+			const { favoritos } = getStore(); 
+			const index = favoritos.findIndex(fav => fav.name === item.name); 
+		
+			if (index !== -1) {
+				setStore({
+					favoritos: [
+						...favoritos.slice(0, index), 
+						...favoritos.slice(index + 1) 
+					]
+				});
+			} else {
+				setStore({
+					favoritos: [...favoritos, item] 
+				});
+			}
+		},
+		removeFavoritos: (name) => {
+			const { favoritos } = getStore(); 
+			const nuevosFavoritos = favoritos.filter(fav => fav.name !== name);
+			setStore({ favoritos: nuevosFavoritos }); 
 		},
 	  },
 	};

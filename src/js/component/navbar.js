@@ -1,14 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext"; 
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
-  const { store } = useContext(Context); 
-  const [isOpen, setIsOpen] = useState(false); 
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen); 
-  };
+  const { store, actions } = useContext(Context); 
 
   return (
     <nav className="navbar navbar-dark bg-black mb-3">
@@ -20,31 +15,33 @@ export const Navbar = () => {
         />
       </Link>
       <div className="ml-auto">
-        <div className="btn-group">
+        <div className="dropdown">
           <button
+            className="btn bg-warning dropdown-toggle"
             type="button"
-            className="btn-favorites btn-primary dropdown-toggle"
-            onClick={toggleDropdown} 
-            aria-haspopup="true"
-            aria-expanded={isOpen ? "true" : "false"} 
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
             Favorites
           </button>
-          <div className={`dropdown-menu ${isOpen ? "show" : ""}`}>
-            {store.favoritos && store.favoritos.length > 0 ? (
-              store.favoritos.map((persona) => (
-                <Link
-                  key={persona.uid}
-                  to={`/personaje/${persona.uid}`}
-                  className="dropdown-item"
-                >
-                  {persona.name}
-                </Link>
+          <ul className="dropdown-menu dropdown-menu-end">
+            {store.favoritos.length > 0 ? (
+              store.favoritos.map((favorito, index) => (
+                <li key={index} className="dropdown-item d-flex justify-content-between align-items-center">
+                  <span>{favorito.name}</span>
+                  <button
+                    className="btn btn-sm btn-danger ms-2"
+                    onClick={() => actions.removeFavoritos(favorito.name)}
+                  >
+                    <i className="fas fa-trash"></i>
+                  </button>
+                </li>
               ))
             ) : (
-              <p className="dropdown-item">No hay favoritos</p>
+              <li className="dropdown-item text-muted">add Favorites</li>
             )}
-          </div>
+          </ul>
         </div>
       </div>
     </nav>
